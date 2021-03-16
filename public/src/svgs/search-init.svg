@@ -1,0 +1,21 @@
+<svg id="initate-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1440">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-width: 100px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: rgb(255,255,255,.2);
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: rgb(255,255,255,.2);
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="584.22" cy="566.01" r="429.35"/>
+  <rect class="cls-2" x="1039.01" y="805.85" width="130.53" height="560.44" rx="65.27" transform="translate(-444.53 1098.95) rotate(-45)"/>
+</svg>

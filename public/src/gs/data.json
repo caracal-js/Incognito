@@ -112,6 +112,16 @@
         "location": "gba/#zelda_past"
     },
     {
+        "title": "Pokémon Fire Red",
+        "image": "poke_firered.jpg",
+        "location": "gba/#poke_firered"
+    },
+    {
+        "title": "Pokémon Leaf Green",
+        "image": "poke_leafgreen.jpg",
+        "location": "gba/#poke_leafgreen"
+    },
+    {
         "title": "Pokémon Ruby",
         "image": "poke_ruby.jpg",
         "location": "gba/#poke_ruby"
@@ -120,6 +130,11 @@
         "title": "Pokémon Sapphire",
         "image": "poke_sapphire.jpg",
         "location": "gba/#poke_sapphire"
+    },
+    {
+        "title": "Pokémon Emerald",
+        "image": "poke_emerald.png",
+        "location": "gba/#poke_emerald"
     },
     {
         "title": "1 on 1 Soccer",

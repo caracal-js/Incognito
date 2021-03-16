@@ -79,6 +79,7 @@
     --alloy-icon: url('/src/svgs/alloy.svg');
     --sysya-icon: url('/src/svgs/sysya.svg');
     --womginx-icon: url('/src/svgs/womginx.svg');
+    --initate-search-icon: url('/src/svgs/search-init.svg');
     --base-width: 1280px;
     --base-width-small: calc(100% - 75px);
     --frame-control-button-color: var(--moon-color);
@@ -291,8 +292,8 @@ nav #dropdown:hover #content {
 .root {
     position: absolute;
     width: 100%;
-    height: calc(100% - 120px);
-    top: 60px;
+    height: calc(100% - 121px);
+    top: 61px;
     overflow: auto;
     text-align: center;
     scrollbar-width:thin;
@@ -336,21 +337,20 @@ nav #dropdown:hover #content {
     height: 40px;
     padding: 0px 10px;
     border: var(--form-box-border);
-    border-radius: 0px 3px 3px 0px;
     font-family: "Roboto";
+    border-radius: 0px;
     box-sizing: border-box;
     outline: none;
     box-shadow: none !important;
     background: var(--form-box-background);
     color: var(--form-box-color);
 }
-.root[id=home] #form #search-option {
+.root[id="home"] .form-control {
     display: inline-block;
     width: 40px;
     height: 40px;
     border: var(--form-box-border);
-    border-right: none;
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 3px;
     font-family: "Roboto";
     box-sizing: border-box;
     background: var(--form-box-background);
@@ -358,17 +358,28 @@ nav #dropdown:hover #content {
     outline: none;
     cursor: pointer;
 }
+.root[id="home"] .form-control span {
+    display: inline-block;
+    margin: 7px 0px 0px 0px;
+    width: 24px;
+    height: 24px;
+}
+.root[id="home"] .form-control[id="search-option"] {
+    border-radius: 3px 0px 0px 3px;
+    border-right: none;
+}
+.root[id="home"] .form-control[id="init"] {
+    border-radius: 0px 3px 3px 0px;
+    border-left: none;
+}
+.root[id="home"] .form-control[id="init"] span {
+    background: var(--initate-search-icon);
+}
 .root[id="home"] #description {
     width:500px;
     margin: 0px auto;
     color: var(--default-text-color);
     font-size: 14px;
-}
-.root[id="home"] #search-option span {
-    display: inline-block;
-    margin: 7px 0px 0px 0px;
-    width: 24px;
-    height: 24px;
 }
 .root[id="home"] #search-dropdown {
     display: block;
@@ -542,6 +553,9 @@ nav #dropdown:hover #content {
     color: var(--default-text-color);
     margin: 10px 0px 0px 0px;
     font-family: "Roboto-Medium";
+    font-size: 19px;
+    width: 100%;
+    text-align: left;
 }
 .root[id=gs] .game-container #controls {
     position: absolute;
@@ -565,7 +579,7 @@ nav #dropdown:hover #content {
     font-family: "Material Icons";
 }
 .root[id=gs] .game-container #game iframe, .root[id=gs] .game-container #game ruffle-player {
-    height: calc(100% - 1px);
+    height: 100%;
 }
 .root[id=gs] .game-container #game iframe {
     width: calc(100% - 1px);
