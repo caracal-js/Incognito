@@ -1,6 +1,13 @@
 # Incognito
 Access the world wide web
 
+# Setup
+```
+git clone https://github.com/caracal-js/Incognito.git
+cd Incognito
+git submodule update --init
+```
+
 # Ultraviolet
 Ultraviolet's bare server by default is set to Incognito's official bare server (https://incog.dev/bare/)
 
