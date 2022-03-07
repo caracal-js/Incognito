@@ -19,6 +19,11 @@
       "title": "Shell Shockers"
     },
     {
+      "img": "./img/gs/skiribbl.png",
+      "location": "./load.html#aHR0cHM6Ly9za3JpYmJsLmlv",
+      "title": "Skribbl.io"
+    },
+    {
       "img": "./img/gs/1-on-1-soccer.jpg",
       "location": "/source/swfs/#1on1soccer",
       "title": "1 on 1 Soccer",
