@@ -80,8 +80,7 @@ app.on('init', () => {
     });
 });
 
-app.on('exit', () => {
-    app.closeNav();
+app.on('exit', async () => {
     document.querySelector('#open-nav').removeAttribute('data-open');
     if (document.querySelector('header').hasAttribute('data-init')) {
         document.querySelector('header').removeAttribute('data-init')
@@ -104,7 +103,15 @@ app.on('exit', () => {
 
     app.nav.clear();
     app.main.clear();
+
+    app.main.target.classList.toggle('transition')
 });
+
+
+app.on('after', () => {
+    app.main.target.classList.toggle('transition')
+});
+
 
 document.querySelector('#access-form').addEventListener('submit', event => {
     event.preventDefault();
@@ -131,4 +138,10 @@ function createLink(href = null, content = '', config = {}) {
     const elem = app.createElement('a', content, config);
     if (href) elem.href = href;
     return elem;
+};
+
+function timeout(time = 1000) {
+    return new Promise(resolve => 
+        setTimeout(resolve, time)
+    );
 };

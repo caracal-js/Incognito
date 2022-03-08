@@ -1,7 +1,7 @@
 import { Selection } from './selection.js';
 import { Tabs } from './tabs.js';
 
-function options(app) {
+async function options(app) {
     document.querySelector('#open-nav').setAttribute('data-open', '');
     app.search.title.style.display = 'block';
     app.search.title.textContent = 'Options';
@@ -213,49 +213,9 @@ function options(app) {
 
     tabs.createTab('about', app.createElement(
         'div', 
-        [
-            app.createElement('section', [
-                app.createElement('span', 'About Incognito', {
-                    style: {
-                        display: 'block',
-                        'margin-bottom': '6px',
-                        'font-size': '18px',
-                        'font-weight': '500'
-                    }
-                }),
-                app.createElement('p', 'Access the world wide web, Incognito is an anti-censorship web service.', {
-                    style: {
-                        'margin-bottom': '0'
-                    }
-                })
-            ], {
-                class: 'data-section'
-            }),
-            app.createElement('section', [
-                app.createElement('span', 'Authors', {
-                    style: {
-                        display: 'block',
-                        'margin-bottom': '6px',
-                        'font-size': '18px',
-                        'font-weight': '500'
-                    }
-                }),
-                app.createElement('div', [
-                    app.createElement('p', '<a href="https://github.com/caracal-js">Caracal.js</a> - Creator of <a href="https://github.com/titaniumnetwork-dev/Ultraviolet">Ultraviolet</a> & Incognito', {
-                        style: {
-                            'margin-bottom': '0'
-                        }
-                    }),
-                    app.createElement('p', '<a href="https://github.com/e9x">e9x</a> - Creator of <a href="https://github.com/tomphttp/">TompHTTP</a>', {
-                        style: {
-                            'margin-bottom': '0'
-                        }
-                    }),
-                ])
-            ], {
-                class: 'data-section'
-            })
-        ])
+        
+        await createAbout(app)
+        )
     )
     
     app.nav.about = app.createElement('a', 'About', {
@@ -299,5 +259,81 @@ function options(app) {
     )
     app.main.content = tabs.element;
 }
+
+async function createAbout(app) {
+    const res = await fetch('./about.json');
+    const json = await res.json();
+    
+    const authors = [];
+    const socials = [];
+
+    for (const entry of json.authors) {
+        authors.push(
+            app.createElement('p', `${entry.name} - ${entry.data}`, {
+                style: {
+                    'margin-bottom': '0'
+                }
+            })
+        )
+    };
+
+    for (const entry of json.socials) {
+        socials.push(
+            app.createElement('p', `${entry.name} - ${entry.data}`, {
+                style: {
+                    'margin-bottom': '0'
+                }
+            })
+        )
+    };
+
+    return [
+        app.createElement('section', [
+            app.createElement('span', json.main.title, {
+                style: {
+                    display: 'block',
+                    'margin-bottom': '6px',
+                    'font-size': '18px',
+                    'font-weight': '500'
+                }
+            }),
+            app.createElement('p', json.main.data, {
+                style: {
+                    'margin-bottom': '0'
+                }
+            })
+        ], {
+            class: 'data-section'
+        }),
+        app.createElement('section', [
+            app.createElement('span', 'Authors', {
+                style: {
+                    display: 'block',
+                    'margin-bottom': '6px',
+                    'font-size': '18px',
+                    'font-weight': '500'
+                }
+            }),
+            app.createElement('div', authors)
+        ], {
+            class: 'data-section'
+        }),
+        app.createElement('section', [
+            app.createElement('span', 'Socials', {
+                style: {
+                    display: 'block',
+                    'margin-bottom': '6px',
+                    'font-size': '18px',
+                    'font-weight': '500'
+                }
+            }),
+            app.createElement('div', socials)
+        ], {
+            class: 'data-section'
+        })
+    ];
+
+
+};
 
 export { options };

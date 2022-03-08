@@ -15,6 +15,7 @@ class App extends EventEmitter {
             const ancestor = new URL(event.oldURL);
             this.emit('exit', ancestor, location);
             (this.emit(location.hash, this) || this.emit('default', this))
+            this.emit('after', null);
         });
         this.emit('init', this);
         this.emit(location.hash, this) || this.emit('default', this);

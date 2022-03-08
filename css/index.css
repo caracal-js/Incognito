@@ -37,6 +37,7 @@ body {
  --width-padding: 15%;
  min-height:100vh
 }
+
 a {
  color:var(--accent)
 }
