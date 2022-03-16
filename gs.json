@@ -24,6 +24,21 @@
       "title": "Skribbl.io"
     },
     {
+      "img": "./img/gs/fn.png",
+      "location": "./load.html#aHR0cHM6Ly9wbGF5LmdlZm9yY2Vub3cuY29tL21hbGwvIy9kZWVwbGluaz9nYW1lLWlkPTQ2YmZhYjA2LWQ4NjQtNDY1ZC05ZTU2LTJkOWU0NWNkZWUwYQ%3D%3D",
+      "title": "Fortnite"
+    },
+    {
+      "img": "./img/gs/sg.jpg",
+      "location": "./load.html#aHR0cHM6Ly9wbGF5LmdlZm9yY2Vub3cuY29tL21hbGwvIy9kZWVwbGluaz9nYW1lLWlkPTM5Njk5ZmI3LTVhMDUtNDFlNi04NmIyLTNjZDZmZDZjNDU5Yw%3D%3D",
+      "title": "Splitgate"
+    },
+    {
+      "img": "./img/gs/among.jpg",
+      "location": "./load.html#aHR0cHM6Ly9ub3cuZ2cvcGxheS9pbm5lcnNsb3RoLWxsYy80MDQ3L2Ftb25nLXVz",
+      "title": "Among Us"
+    },
+    {
       "img": "./img/gs/1-on-1-soccer.jpg",
       "location": "/source/swfs/#1on1soccer",
       "title": "1 on 1 Soccer",

@@ -266,10 +266,11 @@ async function createAbout(app) {
     
     const authors = [];
     const socials = [];
+    const contacts = [];
 
     for (const entry of json.authors) {
         authors.push(
-            app.createElement('p', `${entry.name} - ${entry.data}`, {
+            app.createElement('p', `${entry.name}${entry.data ? ' - ' + entry.data : ''}`, {
                 style: {
                     'margin-bottom': '0'
                 }
@@ -279,7 +280,17 @@ async function createAbout(app) {
 
     for (const entry of json.socials) {
         socials.push(
-            app.createElement('p', `${entry.name} - ${entry.data}`, {
+            app.createElement('p', `${entry.name}${entry.data ? ' - ' + entry.data : ''}`, {
+                style: {
+                    'margin-bottom': '0'
+                }
+            })
+        )
+    };
+
+    for (const entry of json.contact) {
+        contacts.push(
+            app.createElement('p', `${entry.name}${entry.data ? ' - ' + entry.data : ''}`, {
                 style: {
                     'margin-bottom': '0'
                 }
@@ -330,7 +341,20 @@ async function createAbout(app) {
             app.createElement('div', socials)
         ], {
             class: 'data-section'
-        })
+        }),
+        contacts.length ? app.createElement('section', [
+            app.createElement('span', 'Contact', {
+                style: {
+                    display: 'block',
+                    'margin-bottom': '6px',
+                    'font-size': '18px',
+                    'font-weight': '500'
+                }
+            }),
+            app.createElement('div', contacts)
+        ], {
+            class: 'data-section'
+        }) : null
     ];
 
 

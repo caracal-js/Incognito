@@ -68,6 +68,7 @@ function access(app) {
                                     document.querySelector('header').style.display = 'none';
                                     frame.style.display = 'block';
                                     frame.src = './load.html#' + encodeURIComponent(btoa(suggestion.phrase));
+                                    document.querySelector('.access-panel').style.removeProperty('display');
                                 }
                             }
                         })
@@ -79,6 +80,21 @@ function access(app) {
     );
     app.search.input.setAttribute('form', 'access-form');
     app.search.submit.setAttribute('form', 'access-form');
+
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has('link')) {
+        app.main.target.style.display = 'none';
+        app.header.target.style.display = 'none';
+        
+        const frame = document.querySelector('.access-frame');
+
+        frame.src = '/load.html#' + encodeURIComponent(params.get('link'));
+        frame.style.display = 'block';
+
+        document.querySelector('.access-panel').style.removeProperty('display');
+        history.replaceState('', '', window.location.pathname + '#');
+    };
 };
 
 export { access };

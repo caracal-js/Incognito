@@ -61,7 +61,7 @@ class App extends EventEmitter {
         if (typeof content === 'object') {
             if (Array.isArray(content)) {
                 element.append(
-                    ...content
+                    ...content.filter(node => !!node)
                 );
             } else {
                 element.append(content);

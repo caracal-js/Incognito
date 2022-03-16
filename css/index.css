@@ -38,6 +38,75 @@ body {
  min-height:100vh
 }
 
+.access-panel {
+  display: flex;
+  position: absolute;
+
+  z-index: 1;
+  width: 100%;
+  max-width: 500px;
+  color: #222;
+  font-family: Roboto;
+  align-self: center;
+  max-height: 20px;
+}
+
+.access-panel .controls {
+  background: var(--background);
+  transform: translateY(-100%);
+  transition: 0.2s;
+  visibility: hidden;
+  width: 100%;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 15px;
+}
+
+.access-panel:hover .controls {
+  transform: none;
+  visibility: visible;
+  max-height: none;
+  height: 51.4px;
+}
+
+.access-panel .controls input {
+  background: none;
+  border: none;
+  margin: 0px 10px;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  flex-grow: 1;
+  outline: none;
+}
+
+.access-panel .controls .icon {
+  width: 20px;
+  height: 20px;
+  margin: 0px 5px 0px 10px;
+}
+
+.access-panel .controls .interact {
+  /*
+  background: var(--accent);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  color: var(--text-color);
+  */
+  color: var(--accent);
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+  font-family: Material Icons;
+  padding: 5px 7px;
+  margin: 0px 5px;
+}
+
 a {
  color:var(--accent)
 }
@@ -107,6 +176,10 @@ section p a {
  border-radius:5px;
  display:inline-block;
  cursor:pointer
+}
+.gs-entry:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
 }
 header {
  height:80px;

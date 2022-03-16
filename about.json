@@ -18,5 +18,10 @@
             "name": "<a href=\"https://www.patreon.com/incognitotn\">Patreon</a>",
             "data": "Helps Incognito restock its domains & upgrade servers"
         }
+    ],
+    "contact": [
+        {
+            "name": "<a href=\"mailto:incognito@titaniumnetwork.org\">incognito@titaniumnetwork.org</a>"
+        }
     ]
 }
